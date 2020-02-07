@@ -1,0 +1,101 @@
+//global
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+#page {
+    height: 100%;
+}
+
+#primary {
+    height: 100%;
+}
+
+#content {
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    height:100%;
+    background-color: black;
+}
+
+header {
+    position: relative;
+    width: 100%;
+}
+
+.content {
+    height: 100%;
+}
+
+//front-page
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+
+    figure {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 55%;
+            opacity: .9;
+        }
+    }
+}
+
+// header
+
+.nav-container {
+    background-color: $color__branding_cyan;
+    width: 100%;
+    height: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 6px -1px rgba(0,0,0,0.82);
+}
+
+.nav-container-border {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid black;
+    width: 99.7%;
+    height: 90%;
+
+    nav {
+        max-width: 80%;
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            justify-items: center;
+            margin-top: .1rem;
+
+            li {
+                font-size: 1.25rem;
+                letter-spacing: 4px;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+                color: #2c2a2a;
+                font-family: quicksand;
+
+                :hover {
+                    font-size: 1.35rem;
+                    transition: font-size .5s;
+                }
+            }
+        }
+    }
+}

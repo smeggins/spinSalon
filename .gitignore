@@ -13,9 +13,10 @@ plugins/*
 themes/*
 !themes/spinSalon/
 # Ignore packages #
-themes/quotes/node_modules/
-themes/quotes/assets/comps
-themes/quotes/assets/content
+themes/spinSalon/node_modules/
+themes/spinSalon/assets/comps
+themes/spinSalon/assets/content
+themes/spinSalon/assets/img/
 # Ignore OS files #
 .DS_Store
 .DS_Store?
