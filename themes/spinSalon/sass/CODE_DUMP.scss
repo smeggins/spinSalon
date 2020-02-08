@@ -34,6 +34,21 @@ header {
     height: 100%;
 }
 
+ul {
+    margin: 0px;
+    padding: 0px;
+
+    li {
+        text-decoration: none;
+        list-style-type: none;
+
+        a {
+            text-decoration: none;
+            color: #2c2a2a;
+        }
+    }
+}
+
 //front-page
 
 .hero-image {
@@ -49,7 +64,7 @@ header {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: 50% 55%;
+            object-position: 42% 55%;
             opacity: .9;
         }
     }
@@ -57,14 +72,47 @@ header {
 
 // header
 
+header {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+
+    h1 {
+        color: $color__branding_cyan;
+        z-index: 1;
+        letter-spacing: 4px;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        color: #2c2a2a;
+        font-family: quicksand;
+        font-size: 3rem;
+        width: 100%;
+        text-align: center;
+        
+    }
+}
+
+.menu-button {
+    position: absolute;
+    width: 10vw;
+    max-width: 50px;
+    height: 10vw;
+    max-height: 50px;
+    z-index: 1;
+    left: 1vw;
+}
+
 .nav-container {
     background-color: $color__branding_cyan;
     width: 100%;
     height: 3vw;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     box-shadow: 0px 2px 6px -1px rgba(0,0,0,0.82);
+
+    @include desktop {
+        display: flex;
+    }
 }
 
 .nav-container-border {
@@ -88,12 +136,69 @@ header {
                 font-size: 1.25rem;
                 letter-spacing: 4px;
                 text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-                color: #2c2a2a;
+                // color: #2c2a2a;
                 font-family: quicksand;
 
                 :hover {
                     font-size: 1.35rem;
                     transition: font-size .5s;
+                }
+            }
+        }
+    }
+}
+
+.header-sidebar-nav {
+    ul {
+        display: flex;
+        flex-direction: column;
+    }
+}
+#secondary {
+    position: absolute;
+    z-index: 2;
+    background-image: url('../../assets/req/blacknwhite-menu.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: #0C0E0D;
+    width: 100%;
+    height: 100%;
+
+
+    a{
+        color: white;
+    }
+}
+
+
+//footer
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../assets/req/record.jpg");
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 33vw;
+    border-top: 2px solid #2c2a2a;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+
+        li {
+            text-align: center;
+            margin: 0px .5rem;
+
+            a {
+                text-shadow: 0.5px 0.5px 2px hsla(0,0%,100%,0.5);
+
+                @include small-mobile {
+                    word-break: break-all;
                 }
             }
         }

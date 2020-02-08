@@ -22,7 +22,16 @@
 			<a class="skip-link screen-reader-text" href="#content"><?php echo esc_html( 'Skip to content' ); ?></a>
 
 			<header id="masthead" class="site-header" role="banner">
-
+				<h1> SPIN SALON </h1>
+				<div class= "menu-button">
+					<a href="">
+					<svg width="100%" height="100%">
+						<rect x="0" y="25%" rx="3" ry="3" width="100%" height="10%"></rect>;
+						<rect x="0" y="50%" rx="3" ry="3" width="100%" height="10%"></rect>;
+						<rect x="0" y="75%" rx="3" ry="3" width="100%" height="10%"></rect>;
+					</svg>
+					</a>
+				</div>
 				<div class= "nav-container">
 					<div class="nav-container-border">
 						<nav id="site-navigation" class="main-navigation" role="navigation">
@@ -33,3 +42,6 @@
 			</header>
 
 			<div id="content" class="site-content">
+
+			<?php get_sidebar(); ?>
+
