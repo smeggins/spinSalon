@@ -45,6 +45,7 @@ ul {
         a {
             text-decoration: none;
             color: #2c2a2a;
+            font-family: quicksand;
         }
     }
 }
@@ -84,11 +85,17 @@ header {
         text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         color: #2c2a2a;
         font-family: quicksand;
-        font-size: 3rem;
+        font-size: 2.8rem;
         width: 100%;
         text-align: center;
-        
+        opacity: 0;
     }
+}
+
+.hero-title-before {
+    font-size: 3rem;
+    opacity: 1;
+    transition: font-size 1.5s linear .2s, opacity 2s linear .2s;
 }
 
 .menu-button {
@@ -152,8 +159,14 @@ header {
     ul {
         display: flex;
         flex-direction: column;
+        margin: 5rem 0rem 0rem 2rem;
+
+        li {
+            margin: 2rem 0rem;
+        }
     }
 }
+
 #secondary {
     position: absolute;
     z-index: 2;
@@ -165,9 +178,44 @@ header {
     width: 100%;
     height: 100%;
 
+    ul {
 
-    a{
-        color: white;
+        li {
+
+            a{
+                color: white;
+
+                &:hover {
+                    font-size: 1.8em;
+                    transition: font-size 1s;
+                }
+            }
+        }
+    }
+}
+
+.header-sidebar-nav-exit {
+    margin: 2rem;
+    font-size: 1.5rem;
+}
+
+.menu-hidden {
+    left: -100vw;
+    transition: left 1s;
+
+    a {
+        opacity: 0;
+        transition: opacity 1s linear;
+    }
+}
+
+.menu-shown {
+    left: 0px;
+    transition: left 1s;
+
+    a {
+        opacity: 1;
+        transition: opacity 1s linear .8s;
     }
 }
 
@@ -178,7 +226,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../../assets/req/record.jpg");
+    background-image: url("../../assets/req/dark-wood.png");
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -203,4 +251,8 @@ footer {
             }
         }
     }
+}
+
+.footer-hidden {
+
 }

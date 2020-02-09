@@ -610,7 +610,8 @@ ul {
     list-style-type: none; }
     ul li a {
       text-decoration: none;
-      color: #2c2a2a; }
+      color: #2c2a2a;
+      font-family: quicksand; }
 
 .hero-image {
   width: 100%;
@@ -643,9 +644,16 @@ header {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     color: #2c2a2a;
     font-family: quicksand;
-    font-size: 3rem;
+    font-size: 2.8rem;
     width: 100%;
-    text-align: center; }
+    text-align: center;
+    opacity: 0; }
+
+.hero-title-before {
+  font-size: 3rem;
+  opacity: 1;
+  -webkit-transition: font-size 1.5s linear .2s, opacity 2s linear .2s;
+  transition: font-size 1.5s linear .2s, opacity 2s linear .2s; }
 
 .menu-button {
   position: absolute;
@@ -710,7 +718,10 @@ header {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  margin: 5rem 0rem 0rem 2rem; }
+  .header-sidebar-nav ul li {
+    margin: 2rem 0rem; }
 
 #secondary {
   position: absolute;
@@ -722,8 +733,34 @@ header {
   background-color: #0C0E0D;
   width: 100%;
   height: 100%; }
-  #secondary a {
+  #secondary ul li a {
     color: white; }
+    #secondary ul li a:hover {
+      font-size: 1.8em;
+      -webkit-transition: font-size 1s;
+      transition: font-size 1s; }
+
+.header-sidebar-nav-exit {
+  margin: 2rem;
+  font-size: 1.5rem; }
+
+.menu-hidden {
+  left: -100vw;
+  -webkit-transition: left 1s;
+  transition: left 1s; }
+  .menu-hidden a {
+    opacity: 0;
+    -webkit-transition: opacity 1s linear;
+    transition: opacity 1s linear; }
+
+.menu-shown {
+  left: 0px;
+  -webkit-transition: left 1s;
+  transition: left 1s; }
+  .menu-shown a {
+    opacity: 1;
+    -webkit-transition: opacity 1s linear .8s;
+    transition: opacity 1s linear .8s; }
 
 footer {
   display: -webkit-box;
@@ -735,7 +772,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url("../../assets/req/record.jpg");
+  background-image: url("../../assets/req/dark-wood.png");
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
