@@ -85,10 +85,10 @@ require get_template_directory() . '/inc/metaboxes.php';
  */
 require get_template_directory() . '/inc/api.php';
 
-function spin_sidebar() {
+function business_hours() {
 	register_sidebar( array(
-		'name'          => esc_html( 'Sidebar' ),
-		'id'            => 'sidebar-1',
+		'name'          => esc_html( 'Business Hours' ),
+		'id'            => 'business_hours',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -97,4 +97,18 @@ function spin_sidebar() {
 	) );
 }
 
-add_action( 'widgets_init', 'spin_sidebar' );
+add_action( 'widgets_init', 'business_hours' );
+
+function contact_info() {
+	register_sidebar( array(
+		'name'          => esc_html( 'Contact Info' ),
+		'id'            => 'contact_info',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+
+add_action( 'widgets_init', 'contact_info' );
