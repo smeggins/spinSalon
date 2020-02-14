@@ -27,7 +27,7 @@
 				<?php $the_query = new WP_Query( $args ); ?>
 
 						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-						<div class= "front-page-intro">
+						<div class= "front-page-intro hidden">
 							<h2><?php the_title(); ?></h2>
 							<?php the_content(); ?>
 						</div>
@@ -36,26 +36,28 @@
 						<?php wp_reset_postdata(); ?>
 
 						<div class= "business-info-container">
-							<div class= "contact-container">
-								<h2>Contact us</h2>
-								<?php
-									if ( is_active_sidebar( 'contact_info' ) ) : //check the sidebar if used.
-										dynamic_sidebar( 'contact_info' );  // show the sidebar.
-									endif;
-								?>
-							</div>
+							<div class= "js-container hidden">
+								<div class= "contact-container">
+									<h2>Contact us</h2>
+									<?php
+										if ( is_active_sidebar( 'contact_info' ) ) : //check the sidebar if used.
+											dynamic_sidebar( 'contact_info' );  // show the sidebar.
+										endif;
+									?>
+								</div>
 
-							<div class= "hours-container">
-								<h2>When to find us</h2>
-								<?php
-									if ( is_active_sidebar( 'business_hours' ) ) : //check the sidebar if used.
-										dynamic_sidebar( 'business_hours' );  // show the sidebar.
-									endif;
-								?>
+								<div class= "hours-container">
+									<h2>When to find us</h2>
+									<?php
+										if ( is_active_sidebar( 'business_hours' ) ) : //check the sidebar if used.
+											dynamic_sidebar( 'business_hours' );  // show the sidebar.
+										endif;
+									?>
+								</div>
 							</div>
 						</div>
 
-						<div class= "location-container">
+						<div class= "location-container hidden">
 							<h2>Where to find us</h2>
 
 							<p>20475 Lougheed Hwy, Maple Ridge, BC V2X 9B6</p>

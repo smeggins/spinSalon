@@ -34,3 +34,9 @@
     justify-content: center;
     align-items: center;
 }
+
+@mixin title-border-tb {
+	padding: 1rem;
+	border-top: 1px solid lightgrey;
+	border-bottom: 1px solid lightgrey;
+}
