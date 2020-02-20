@@ -598,6 +598,9 @@ ul {
 h2, h3, h4 {
   font-family: quicksand; }
 
+h4 {
+  margin: .5rem; }
+
 article {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -617,6 +620,12 @@ figure {
 .widget li {
   text-decoration: none;
   list-style-type: none; }
+
+.wp-block-button {
+  margin: 1rem; }
+  .wp-block-button a {
+    border-radius: 0px;
+    font-family: quicksand, serif; }
 
 .hidden {
   opacity: 0; }
@@ -652,6 +661,9 @@ figure {
   padding: 1rem;
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey; }
+
+.mandatory {
+  color: red; }
 
 .fp-header {
   display: -webkit-box;
@@ -902,7 +914,7 @@ footer {
       text-align: center;
       margin: 0px .5rem; }
       footer ul li a {
-        text-shadow: 0.5px 0.5px 0px rgba(255, 255, 255, 0.5); }
+        color: white; }
         @media screen and (max-width: 340px) {
           footer ul li a {
             word-break: break-all; } }
@@ -911,15 +923,58 @@ footer {
   display: none !important; }
 
 .page-content img {
-  max-height: 400px;
   width: 100%;
+  height: 70vw;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: top;
      object-position: top; }
 
-.contact-us-main {
-  background-color: #3E5641; }
-
 .contact-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-top: 10rem; }
+  .contact-container div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+
+.shadow-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: .35; }
+
+.services-container article .entry-div {
+  position: relative;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -35px; }
+
+.services-container article .entry-title {
+  position: relative;
+  z-index: 1;
+  color: white; }

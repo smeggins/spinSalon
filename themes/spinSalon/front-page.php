@@ -37,7 +37,7 @@
 
 						<div class= "business-info-container">
 							<div class= "js-container hidden">
-								<div class= "contact-container">
+								<div class= "contact-us-container">
 									<h2>Contact us</h2>
 									<?php
 										if ( is_active_sidebar( 'contact_info' ) ) : //check the sidebar if used.

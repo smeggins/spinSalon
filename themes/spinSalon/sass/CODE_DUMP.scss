@@ -32,6 +32,10 @@ h2, h3, h4 {
     font-family: quicksand;
 }
 
+h4 {
+    margin: .5rem;
+}
+
 article {
     display: flex;
     flex-direction: column;
@@ -48,6 +52,15 @@ figure {
     li {
         text-decoration: none;
         list-style-type: none;
+    }
+}
+
+.wp-block-button {
+    margin: 1rem;
+
+    a {
+        border-radius: 0px;
+        font-family: $font__header;
     }
 }
 
@@ -82,6 +95,10 @@ figure {
 
 .entry-title {
     @include title-border-tb;
+}
+
+.mandatory {
+    color: red;
 }
 
 // header----------------------------------------------------------------------------------
@@ -333,7 +350,7 @@ footer {
             margin: 0px .5rem;
 
             a {
-                text-shadow: 0.5px 0.5px 0px hsla(0,0%,100%,.5);            
+                color: white;
 
                 @include small-mobile {
                     word-break: break-all;
@@ -352,8 +369,8 @@ footer {
 .page-content {
 
     img {
-        max-height: 400px;
         width: 100%;
+        height: 70vw;
         object-fit: cover;
         object-position: top;
     }
@@ -361,10 +378,41 @@ footer {
 
 // contact-us
 
-.contact-us-main {
-    background-color: $color__branding_dark_green;
+.contact-container {
+    @include flex-c;
+    padding-top: 10rem;
+
+    div {
+        @include flex-c;
+    }
 }
 
-.contact-container {
-    padding-top: 10rem;
+// services
+
+.shadow-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .35;
+}
+
+.services-container {
+    article {
+        
+        .entry-div {
+        position: relative;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: -35px;
+        }
+
+        .entry-title {
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+    }
 }

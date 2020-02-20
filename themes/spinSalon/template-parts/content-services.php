@@ -6,15 +6,18 @@
  */
 
 ?>
+<?php $test = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' )?>
+<div class="services-container">
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<div class="entry-div" style="background-image: url('<?php echo $test[0] ?>')">
+			<div class="shadow-box"></div>
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</div><!-- .entry-header -->
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-content page-content">
-        <?php the_content(); ?>
-        
-        
-	</div><!-- .entry-content -->
-</article><!-- #post-## -->
+		<div class="entry-content page-content">
+			<?php the_content(); ?>
+			
+			
+		</div><!-- .entry-content -->
+	</article><!-- #post-## -->
+</div>
