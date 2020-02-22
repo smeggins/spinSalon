@@ -22,7 +22,7 @@
 			<a class="skip-link screen-reader-text" href="#content"><?php echo esc_html( 'Skip to content' ); ?></a>
 
 			<header id="masthead" class="site-header" role="banner">
-				<?php if( is_front_page() || is_page( 'contact-us' )): ?>
+				<?php if( is_front_page() || is_page( 'about' )): ?>
 				<?php echo 	'<div class= "fp-header absoluted">'; ?>
 				<?php else: ?>
 				<?php echo '<div class= "fp-header">'; ?>

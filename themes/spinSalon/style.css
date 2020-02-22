@@ -578,7 +578,20 @@ object {
 main {
   width: 100%;
   background-color: white;
-  padding-bottom: 2rem; }
+  padding-bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 header {
   position: relative;
@@ -593,10 +606,10 @@ ul {
     ul li a {
       text-decoration: none;
       color: #2c2a2a;
-      font-family: quicksand; }
+      font-family: quicksand, serif; }
 
 h2, h3, h4 {
-  font-family: quicksand; }
+  font-family: quicksand, serif; }
 
 h4 {
   margin: .5rem; }
@@ -678,7 +691,7 @@ figure {
     letter-spacing: 4px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     color: #2c2a2a;
-    font-family: quicksand;
+    font-family: quicksand, serif;
     font-size: 2.8rem;
     width: 100%;
     text-align: center;
@@ -742,7 +755,7 @@ figure {
         font-size: 1.25rem;
         letter-spacing: 4px;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        font-family: quicksand; }
+        font-family: quicksand, serif; }
         .nav-container-border nav ul li :hover {
           font-size: 1.35rem;
           -webkit-transition: font-size .5s;
@@ -802,6 +815,15 @@ figure {
 
 .hero-image {
   width: 100%; }
+  .hero-image img {
+    width: 100%;
+    min-height: 100vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 42% 55%;
+       object-position: 42% 55%;
+    opacity: .8;
+    border-bottom: 1px solid #2c2a2a; }
   .hero-image figure {
     width: 100%;
     margin: 0px; }
@@ -978,3 +1000,43 @@ footer {
   position: relative;
   z-index: 1;
   color: white; }
+
+.business-info-container-cu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  border-top: #666 solid 1px;
+  max-width: 90%; }
+  .business-info-container-cu h2 {
+    text-decoration: underline; }
+
+.cu {
+  max-width: 90%; }
+  .cu h2 {
+    text-decoration: underline; }
+
+.content-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
