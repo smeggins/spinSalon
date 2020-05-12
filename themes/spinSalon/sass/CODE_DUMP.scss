@@ -386,6 +386,38 @@ footer {
     }
 }
 
+.page-stylists {
+    
+    .wp-block-group__inner-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid $color__border-abbr;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .wp-block-group:last-child .wp-block-group__inner-container{
+        border-bottom: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+.site-stylists {
+    padding-bottom: 0px;
+}
+
+.bio-fade {
+    transition: 1s;
+    opacity: 0;
+}
+
+.bio {
+    width: 100vw;
+    height: 100vh;
+    background-color: purple;
+}
+
 // contact-us
 
 .contact-container {

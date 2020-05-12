@@ -128,4 +128,26 @@
 
      fadeFunction(divLocations);
 
+        // bio buttons
+
+    $('.page-stylists .wp-block-button').click(function(a) {
+        $('#main').addClass('bio-fade');
+        $('header').addClass('bio-fade');
+        $('#primary').add('div').addClass('bio');
+
+        $.ajax({
+            method: 'GET',
+            url: functionVars.spin_url + `wp/v2/media/${id}`,
+            async: false,
+            success: function(data) {
+
+            },
+    
+            beforeSend: function(xhr) {
+            xhr.setRequestHeader('X-WP-Nonce', functionVars.spin_nonce);
+            }
+        });
+
+    });
+
 })(jQuery);
