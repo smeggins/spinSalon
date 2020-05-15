@@ -949,8 +949,8 @@ footer {
   height: 70vw;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: top;
-     object-position: top; }
+  -o-object-position: center;
+     object-position: center; }
 
 .page-stylists .wp-block-group__inner-container {
   display: -webkit-box;
@@ -970,6 +970,9 @@ footer {
 .page-stylists .wp-block-group:last-child .wp-block-group__inner-container {
   border-bottom: 0px;
   margin-bottom: 0px; }
+
+.page-stylists .wp-block-group {
+  width: 100%; }
 
 .site-stylists {
   padding-bottom: 0px; }
