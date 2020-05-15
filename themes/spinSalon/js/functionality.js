@@ -126,28 +126,95 @@
         fadeFunction(divLocations);
      });
 
-     fadeFunction(divLocations);
+    fadeFunction(divLocations);
+
+        // bio object
+
+    let bios = {
+        generated: 0,
+    };
 
         // bio buttons
 
     $('.page-stylists .wp-block-button').click(function(a) {
-        $('#main').addClass('bio-fade');
+
+        if (bios.generated === 0) {
+            $.ajax({
+                method: 'GET',
+                url: functionVars.spin_url + `wp/v2/stylist_bio?_embed`,
+                async: false,
+                success: function(data) {
+                    $(data).each(function(a) {
+                        console.log(this)
+                        let name = this.title.rendered;
+                        bios[name] = {
+                            text: this.content.rendered,
+                            img: this._embedded['wp:featuredmedia'][0].source_url,
+                            name: this.title.rendered,
+                        }
+                    });
+                    bios.generated = 1;
+                    console.log('i only worked once')
+                },
+        
+                beforeSend: function(xhr) {
+                xhr.setRequestHeader('X-WP-Nonce', functionVars.spin_nonce);
+                }
+            });
+        };
+
+        let that = this;
+        let windowpos = window.scrollY
+        console.log(windowpos)
+
         $('header').addClass('bio-fade');
-        $('#primary').add('div').addClass('bio');
+        $('#main').addClass('bio-fade');
+        $('footer').addClass('bio-fade');
+        setTimeout(function() {
+            
+            $('#main').css('display','none');
+            $('header').css('display','none');
+            $('footer').css('display','none');
 
-        $.ajax({
-            method: 'GET',
-            url: functionVars.spin_url + `wp/v2/media/${id}`,
-            async: false,
-            success: function(data) {
+            $('#primary').append('<div class = "bio"></div>');
+            $('.bio').append(`<div class = "bio-x"></div>`)
+            $('.bio').append(`<img src="${bios[$(that).parent().children('h4').html()].img}" class = "bio-pic"/>`)
+            $('.bio').append(`<h4 class = "bio-name">${bios[$(that).parent().children('h4').html()].name}</h4>`)
+            $('.bio').append(`<div class = "bio-description">${bios[$(that).parent().children('h4').html()].text}</div>`)
+            $('.bio').append(`<a class = "bio-link"></a>`)
+            $('.bio').append(`<div class = "bio-button wp-block-button__link">Go back</div>`)
+            setTimeout(function() {
+                $('.bio').addClass('bio-fade-in')
 
-            },
-    
-            beforeSend: function(xhr) {
-            xhr.setRequestHeader('X-WP-Nonce', functionVars.spin_nonce);
-            }
-        });
+            }, 100)
+
+            $('.bio-button').click(function() {
+                console.log('i was clicked mofo')
+                $('.bio').addClass('bio-fade-out');
+                setTimeout(function() {
+                    $('.bio').remove();
+                    $('#main').css('display','flex');
+                    $('header').css('display','block');
+                    $('footer').css('display','flex');
+                    window.scrollTo(0, windowpos);
+                    $('header').addClass('main-fade-in');
+                    $('#main').addClass('main-fade-in');
+                    $('footer').addClass('main-fade-in');
+                    setTimeout(function() {
+                        $('#main').removeClass('bio-fade');
+                        $('header').removeClass('bio-fade');
+                        $('footer').removeClass('bio-fade');
+                        $('#main').removeClass('main-fade-in');
+                        $('header').removeClass('main-fade-in');
+                        $('footer').removeClass('main-fade-in');
+                    }, 100)
+                }, 500)
+            })
+        }, 500);
+        console.log('we are officially out of the timeout loop')
 
     });
+
+
 
 })(jQuery);

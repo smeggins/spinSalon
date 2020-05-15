@@ -408,14 +408,63 @@ footer {
 }
 
 .bio-fade {
-    transition: 1s;
+    transition: .5s;
     opacity: 0;
 }
 
+.bio.bio-fade-in {
+    transition: .5s;
+    opacity: 1;
+    top: 0px;
+}
+
+.bio.bio-fade-out {
+    transition: .5s;
+    opacity: 0;
+    top: -100vh;
+}
+
+.main-fade-in {
+    transition: .5s;
+    opacity: 1;
+}
+
 .bio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -100vh;
+    left: 0px;
     width: 100vw;
-    height: 100vh;
-    background-color: purple;
+    min-height: 100vh;
+    opacity: 0;
+
+    .bio-pic {
+        width: 90%;
+        height: 65vw;
+        object-fit: cover;
+    }
+
+    .bio-name {
+        margin: 11vw 0px 6vw 0px;
+        font-size: 7.5vw;
+    }
+    
+    .bio-button {
+        border-radius: 0px;
+        width: 60%;
+        font-size: 5vw;
+        color: #fff;
+        font-family: quicksand, sans-serif;
+    }
+    
+    .bio-description {
+        width: 90%;
+        margin-bottom: 8vw;
+        font-size: 4.5vw;
+    }
 }
 
 // contact-us
