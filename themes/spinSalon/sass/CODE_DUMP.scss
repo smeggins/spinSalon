@@ -83,6 +83,10 @@ figure {
     margin: 0px;
     padding: 0px;
 
+    @include desktop {
+        max-width: 100%;
+    }
+
     p {
         padding-bottom: 3rem;
         border-bottom: 1px solid lightgrey;
@@ -121,6 +125,12 @@ figure {
         opacity: 0;
     }
 
+    #hero-title {
+        @include desktop {
+            margin-top: 7vw;
+        }
+    }
+
     .hero-title-before {
         font-size: 3rem;
         opacity: 1;
@@ -140,6 +150,10 @@ figure {
     max-height: 50px;
     z-index: 1;
     left: 1vw;
+
+    @include desktop {
+        display: none;
+    }
 }
 
 .nav-container {
@@ -153,6 +167,11 @@ figure {
 
     @include desktop {
         display: flex;
+        position: fixed;
+        z-index: 1;
+        overflow: hidden;
+        
+
     }
 }
 
@@ -160,8 +179,9 @@ figure {
     display: flex;
     justify-content: center;
     background-color: transparent;
-    border: 1px solid black;
-    width: 99.7%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 100%;
     height: 90%;
 
     nav {
@@ -172,6 +192,10 @@ figure {
             grid-template-columns: repeat(5, 1fr);
             justify-items: center;
             margin-top: .1rem;
+
+            @include desktop {
+                margin: 0px;
+            }
 
             li {
                 font-size: 1.25rem;
@@ -184,6 +208,30 @@ figure {
                     font-size: 1.35rem;
                     transition: font-size .5s;
                 }
+            }
+        }
+    }
+}
+
+.main-navigation {
+    @include desktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.menu-header-nav-container {
+    @include desktop {
+        height: 100%;
+        width: 100%;
+
+        .menu {
+            height: 100%;
+
+            li {
+                display: flex;
+                align-items: center;
             }
         }
     }
@@ -261,11 +309,16 @@ figure {
 
     img {
         width: 100%;
-        min-height: 100vh;
+        height: 100vh;
         object-fit: cover;
         object-position: 42% 55%;
         opacity: .8;
         border-bottom: 1px solid $color__text-main;
+        background-color: grey;
+
+        @include desktop {
+            object-position: 0% 20%;
+        }
     }
 
     figure {
@@ -288,11 +341,41 @@ figure {
 
     .front-page-intro, .location-container {
         margin: 10%;
+        text-align: center;
 
         h2 {
             display: inline-block;
             width: 100%;
             @include title-border-tb;
+        }
+    }
+
+    .front-page-intro {
+        margin: 1vw 0vw 0vw 0vw;
+        width: 85%;
+
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            
+            h2, p {
+                width: 95%;
+            }
+
+            p {
+                border-bottom: 1px solid #d3d3d3;
+                padding-bottom: 2vw;
+            }
+        }
+    }
+
+    .location-container {
+        @include flex-c;
+
+        @include desktop {
+            display: none;
         }
     }
 }
@@ -303,14 +386,6 @@ figure {
             font-size: 1.5rem;
         }
     }
-}
-
-.location-container {
-    @include flex-c;
-}
-
-.location-container, .front-page-intro {
-    text-align: center;
 }
 
 .business-info-container {
@@ -328,12 +403,124 @@ figure {
     background-size: cover;
     background-attachment: fixed;
 
+    @include desktop {
+        display: none;
+    }
+
     h2 {
         text-decoration: underline;
     }
 
     h2, span, li {
         font-weight: bold;
+    }
+}
+.desktop-main-links {
+    margin-top: 2.5vw;
+
+    figure {
+        position: relative;
+        overflow: hidden;
+    }
+
+    figcaption {
+        position: absolute;
+        font-size: 4vw;
+        color: white;
+        text-shadow: 2px 2px 2px #CECECE;
+        top: 11vw;
+        margin: 0px;
+        font-family: quicksand;
+    }
+
+    img {
+        @include desktop {
+            transition: transform 1s;
+            transform: scale(1);
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    figure:hover {
+        a img {
+            @include desktop {
+                transition: 1s;
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+.desktop-main-links .wp-block-group__inner-container {
+    display: none;
+
+    @include desktop {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+
+    .main-a-u,.main-fb,.main-contact {
+        @include desktop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 25vw;
+            background-color: lightgray;
+            margin: 0px;
+
+            a {
+                width: 100%;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    .main-a-u {
+        @include desktop {
+            grid-row: 1;
+            grid-column: 1 / span 2;
+        }
+    }
+
+    .main-fb,.main-contact {
+        @include desktop {
+            grid-row: 2;
+        }
+    }
+
+    .main-contact {
+
+    }
+
+    // .main-a-u-link {
+    //     @include desktop {
+    //         padding: 10vw;
+    //         background-color: blue;
+    //     }
+    // }
+}
+
+.instagram-container {
+    width: 83%;
+    margin-top: 6vw;
+    border-top: solid #d3d3d3 1px;
+    padding-top: 6vw;
+
+    @include desktop {
+        width: 100%;
+        margin-top: 2vw;
+        border-top: 0px;
+        padding-top: 0px;
     }
 }
 
@@ -351,11 +538,17 @@ footer {
     background-size: cover;
     border-top: 2px solid #2c2a2a;
 
+    @include desktop {
+        height: 10vw;
+    }
+
     ul {
         display: flex;
         flex-direction: row;
 
         li {
+            display: flex;
+            align-items: center;
             text-align: center;
             margin: 0px .5rem;
 
@@ -383,10 +576,20 @@ footer {
         height: 70vw;
         object-fit: cover;
         object-position: center;
+
+        @include desktop {
+            height: 25vw;
+        }
     }
 }
 
 .page-stylists {
+
+    @include desktop {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 80%;
+    }
     
     .wp-block-group__inner-container {
         display: flex;
@@ -400,10 +603,43 @@ footer {
     .wp-block-group:last-child .wp-block-group__inner-container{
         border-bottom: 0px;
         margin-bottom: 0px;
+
+        @include desktop {
+            border-bottom: 1px solid $color__border-abbr;
+            margin-bottom: 1rem;
+        }
     }
 
     .wp-block-group {
         width: 100%;
+    }
+}
+
+.page-stylists .wp-block-group:nth-child(even) {
+    @include desktop {
+        padding-right: 3vw;
+    }
+}
+
+.page-stylists .wp-block-group:nth-child(odd) {
+    @include desktop {
+        padding-left: 3vw;
+    }
+}
+
+.page-stylists .wp-block-group:nth-child(1) {
+    @include desktop {
+        padding-left: 0px;
+
+        img {
+            height: 30vw;
+        }
+    }
+}
+
+.page-stylists .wp-block-group:first-child {
+    @include desktop {
+        grid-column: 1 / span 2;
     }
 }
 
@@ -444,16 +680,36 @@ footer {
     width: 100vw;
     min-height: 100vh;
     opacity: 0;
+    max-height: 100vh;
+    padding: 5vw 0px;
+
+    @include desktop {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        padding: 1vw;
+        justify-items: center;
+    }
 
     .bio-pic {
         width: 90%;
         height: 65vw;
         object-fit: cover;
+
+        @include desktop {
+            grid-column: 1;
+            grid-row: 1 / span 5;
+            height: 100%;
+        }
     }
 
     .bio-name {
         margin: 11vw 0px 6vw 0px;
         font-size: 7.5vw;
+
+        @include desktop {
+            margin: 0px;
+            font-size: 1vw;
+        }
     }
     
     .bio-button {
@@ -462,12 +718,23 @@ footer {
         font-size: 5vw;
         color: #fff;
         font-family: quicksand, sans-serif;
+
+        @include desktop {
+            font-size: 1vw;
+        }
     }
     
     .bio-description {
         width: 90%;
         margin-bottom: 8vw;
         font-size: 4.5vw;
+        overflow: scroll;
+
+        @include desktop {
+            margin-bottom: 1vw;
+            font-size: 1vw;
+            text-align: center;
+        }
     }
 }
 
@@ -535,4 +802,8 @@ footer {
 
 .content-container {
     @include flex-c;
+
+    @include desktop {
+        display: none;
+    }
 }
