@@ -11,10 +11,6 @@ main {
 header {
     position: relative;
     width: 100%;
-
-    @include desktop {
-        z-index: 10;
-    }
 }
 
 ul {
@@ -172,10 +168,8 @@ figure {
     @include desktop {
         display: flex;
         position: fixed;
-        z-index: 1;
+        z-index: 10000;
         overflow: hidden;
-        
-
     }
 }
 
@@ -389,6 +383,10 @@ figure {
     li:nth-child(2) {
         span {
             font-size: 1.5rem;
+            
+            @include desktop {
+                font-size: .5vw;
+            }
         }
     }
 }
@@ -418,6 +416,14 @@ figure {
 
     h2, span, li {
         font-weight: bold;
+    }
+
+    .hours-container {
+        max-width: 69%;
+
+        @include desktop {
+            max-width: 100%;
+        }
     }
 }
 .desktop-main-links {
@@ -544,7 +550,11 @@ footer {
     border-top: 2px solid #2c2a2a;
 
     @include desktop {
+        display: grid;
+        grid-template-columns: 1.5fr 4fr 1.5fr;
+        grid-template-rows: 1fr;
         height: 10vw;
+        padding: 0px 1vw;
     }
 
     ul {
@@ -556,6 +566,10 @@ footer {
             align-items: center;
             text-align: center;
             margin: 0px .5rem;
+
+            @include desktop {
+                margin: 0 1.5rem;
+            }
 
             a {
                 color: white;
@@ -570,6 +584,91 @@ footer {
 
 .footer-hidden {
     display: none !important;
+}
+
+.footer-hours-container {
+    display: none;
+
+    @include desktop {
+        display: block;
+        color: white;
+        font-size: .7vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px 3vw;
+    }
+
+    p {
+        @include desktop {
+            margin-bottom: 0px;
+        }
+    }
+
+    h2 {
+        @include desktop {
+            margin: 0px;
+        }
+    }
+
+    aside {
+        @include desktop {
+            margin-top: .5vw;
+        }
+
+        ul {
+            @include desktop {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+.site-navigation-footer {
+    ul {
+        @include desktop {
+            justify-content: center;
+        }
+    }
+}
+
+.footer-contact-location-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include desktop {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    p {
+        @include desktop {
+            margin-bottom: 0px;
+        }
+    }
+
+    h2 {
+        @include desktop {
+            margin: .5vw;
+        }
+    }
+}
+
+.footer-contact-us-container, .footer-location-container {
+    display: none;
+
+    @include desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-column: 3;
+        grid-row: 1;
+        text-align: center;
+        color: white;
+        font-size: .7vw;
+    }
 }
 
 // stylists
@@ -753,6 +852,15 @@ footer {
         @include flex-c;
     }
 }
+
+.contact-us-container, footer {
+    #contact-info-inhabitent-3 li .sidebar-branding {
+        @include desktop {
+            font-size: 1vw;
+        };
+    }
+}
+
 
 // services
 
