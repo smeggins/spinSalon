@@ -120,9 +120,10 @@ figure {
         color: #2c2a2a;
         font-family: $font__header;
         font-size: 2.8rem;
-        width: 100%;
+        // width: 100%;
         text-align: center;
         opacity: 0;
+        animation: title 1.5s forwards;
     }
 
     #hero-title {
@@ -130,12 +131,24 @@ figure {
             margin-top: 7vw;
         }
     }
-
-    .hero-title-before {
-        font-size: 3rem;
-        opacity: 1;
-        transition: font-size 1.5s linear .2s, opacity 2s linear .2s;
+    @keyframes title {
+        from {
+            // font-size: 2.8rem;
+            transform: scale(1);
+            opacity: 0;
+        }
+        to {
+            // font-size: 3rem;
+            transform: scale(1.07);
+            opacity: 1;
+        }
     }
+
+    // .hero-title-before {
+    //     font-size: 3rem;
+    //     opacity: 1;
+    //     transition: font-size 1.5s linear .2s, opacity 2s linear .2s;
+    // }
 }
 
 .absoluted {
@@ -303,10 +316,10 @@ figure {
 //front-page----------------------------------------------------------------------------------
 
 .hero-image {
-    width: 100%;
+    width: 100vw;
 
     img {
-        width: 100%;
+        width: 100vw;
         height: 100vh;
         object-fit: cover;
         object-position: 42% 55%;
@@ -324,7 +337,7 @@ figure {
         margin: 0px;
 
         img {
-            width: 100%;
+            width: 100vw;
             min-height: 100vh;
             object-fit: cover;
             object-position: 42% 55%;
@@ -428,6 +441,7 @@ figure {
 }
 .desktop-main-links {
     margin-top: 2.5vw;
+    width: 100vw;
 
     figure {
         position: relative;
@@ -542,7 +556,8 @@ footer {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 33vw;
+    height: 25vw;
+    max-height: 125px;
     background-image: url("../../assets/req/dark-wood.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -554,6 +569,7 @@ footer {
         grid-template-columns: 1.5fr 4fr 1.5fr;
         grid-template-rows: 1fr;
         height: 10vw;
+        max-height: unset;
         padding: 0px 1vw;
     }
 
@@ -573,9 +589,12 @@ footer {
 
             a {
                 color: white;
+                @media screen and (max-width: 500px) {
+                    font-size: 3.4vw;
+                };
 
                 @include small-mobile {
-                    word-break: break-all;
+                    word-break: break-word;
                 }
             }
         }
@@ -861,6 +880,53 @@ footer {
     }
 }
 
+.contact-us-main {
+    @include desktop {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        align-items: unset;
+        padding-bottom: 0px;
+        margin-top: 3vw;
+        border-top: 1px solid #666;
+    }
+    article {
+        @include desktop {
+            margin-top: 2vw;
+        }
+    }
+    .business-info-container-cu {
+        @include desktop {
+            flex-direction: unset;
+            justify-content: unset;
+            align-items: unset;
+            text-align: unset;
+            max-width: 100%;
+            border-left: 1px solid #666;
+            border-top: unset;
+            padding-left: 2vw;
+            padding-top: 2vw;
+        }
+
+        .location-container {
+            @include desktop {
+                align-items: unset;
+                text-align: unset;
+            }
+        }
+        .content-container {
+            @include desktop {
+                align-items: unset;
+                padding-right: 2vw;
+            }
+        }
+    }
+    .page-content {
+        @include desktop {
+            width: 90%;
+        }
+    }
+}
+
 
 // services
 
@@ -996,5 +1062,33 @@ footer {
 
     @include desktop {
         display: none;
+    }
+}
+
+.contact-us-main .content-container, .contact-us-main .location-container {
+
+    @include desktop {
+        display: flex;
+    }
+}
+
+.stylist-contact-container {
+    @include desktop {
+        margin-bottom: 3vw;
+    }
+    .wp-block-group__inner-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        .numbers-container {
+            margin: 0px;
+        }
+    }
+}
+
+//about us 
+
+#post-19 p {
+    @include desktop {
+        width: 90%;
     }
 }

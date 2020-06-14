@@ -1,9 +1,5 @@
 (function($) {
 
-    //title fade in
-
-        $('#hero-title').addClass('hero-title-before')
-
         //menu fade in/out
 
     $('.menu-button').click(function() {

@@ -254,7 +254,7 @@ address {
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: .9375rem;
+  font-size: 1vw;
   line-height: 1.6;
   margin-bottom: 1.6rem;
   max-width: 100%;
@@ -263,7 +263,7 @@ pre {
 
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  font-size: .9375rem; }
+  font-size: 1vw; }
 
 abbr, acronym {
   border-bottom: 1px dotted #666;
@@ -696,17 +696,33 @@ figure {
     color: #2c2a2a;
     font-family: quicksand, serif;
     font-size: 2.8rem;
-    width: 100%;
     text-align: center;
-    opacity: 0; }
+    opacity: 0;
+    -webkit-animation: title 1.5s forwards;
+            animation: title 1.5s forwards; }
   @media screen and (min-width: 1000px) {
     .fp-header #hero-title {
       margin-top: 7vw; } }
-  .fp-header .hero-title-before {
-    font-size: 3rem;
-    opacity: 1;
-    -webkit-transition: font-size 1.5s linear .2s, opacity 2s linear .2s;
-    transition: font-size 1.5s linear .2s, opacity 2s linear .2s; }
+
+@-webkit-keyframes title {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0; }
+  to {
+    -webkit-transform: scale(1.07);
+            transform: scale(1.07);
+    opacity: 1; } }
+
+@keyframes title {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0; }
+  to {
+    -webkit-transform: scale(1.07);
+            transform: scale(1.07);
+    opacity: 1; } }
 
 .absoluted {
   position: absolute; }
@@ -856,9 +872,9 @@ figure {
     transition: opacity 1s linear .8s; }
 
 .hero-image {
-  width: 100%; }
+  width: 100vw; }
   .hero-image img {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     -o-object-fit: cover;
        object-fit: cover;
@@ -875,7 +891,7 @@ figure {
     width: 100%;
     margin: 0px; }
     .hero-image figure img {
-      width: 100%;
+      width: 100vw;
       min-height: 100vh;
       -o-object-fit: cover;
          object-fit: cover;
@@ -989,7 +1005,8 @@ figure {
         max-width: 100%; } }
 
 .desktop-main-links {
-  margin-top: 2.5vw; }
+  margin-top: 2.5vw;
+  width: 100vw; }
   .desktop-main-links figure {
     position: relative;
     overflow: hidden; }
@@ -1079,7 +1096,8 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  height: 33vw;
+  height: 25vw;
+  max-height: 125px;
   background-image: url("../../assets/req/dark-wood.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -1091,6 +1109,7 @@ footer {
       grid-template-columns: 1.5fr 4fr 1.5fr;
       grid-template-rows: 1fr;
       height: 10vw;
+      max-height: unset;
       padding: 0px 1vw; } }
   footer ul {
     display: -webkit-box;
@@ -1114,9 +1133,12 @@ footer {
           margin: 0 1.5rem; } }
       footer ul li a {
         color: white; }
+        @media screen and (max-width: 500px) {
+          footer ul li a {
+            font-size: 3.4vw; } }
         @media screen and (max-width: 340px) {
           footer ul li a {
-            word-break: break-all; } }
+            word-break: break-word; } }
 
 .footer-hidden {
   display: none !important; }
@@ -1395,6 +1417,58 @@ footer {
   .contact-us-container #contact-info-inhabitent-3 li .sidebar-branding, footer #contact-info-inhabitent-3 li .sidebar-branding {
     font-size: 1vw; } }
 
+@media screen and (min-width: 1000px) {
+  .contact-us-main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+    padding-bottom: 0px;
+    margin-top: 3vw;
+    border-top: 1px solid #666; } }
+
+@media screen and (min-width: 1000px) {
+  .contact-us-main article {
+    margin-top: 2vw; } }
+
+@media screen and (min-width: 1000px) {
+  .contact-us-main .business-info-container-cu {
+    -webkit-box-orient: unset;
+    -webkit-box-direction: unset;
+        -ms-flex-direction: unset;
+            flex-direction: unset;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+    text-align: unset;
+    max-width: 100%;
+    border-left: 1px solid #666;
+    border-top: unset;
+    padding-left: 2vw;
+    padding-top: 2vw; } }
+
+@media screen and (min-width: 1000px) {
+  .contact-us-main .business-info-container-cu .location-container {
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+    text-align: unset; } }
+
+@media screen and (min-width: 1000px) {
+  .contact-us-main .business-info-container-cu .content-container {
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+    padding-right: 2vw; } }
+
+@media screen and (min-width: 1000px) {
+  .contact-us-main .page-content {
+    width: 90%; } }
+
 .shadow-box {
   position: absolute;
   width: 100%;
@@ -1512,3 +1586,23 @@ footer {
   @media screen and (min-width: 1000px) {
     .content-container {
       display: none; } }
+
+@media screen and (min-width: 1000px) {
+  .contact-us-main .content-container, .contact-us-main .location-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; } }
+
+@media screen and (min-width: 1000px) {
+  .stylist-contact-container {
+    margin-bottom: 3vw; } }
+
+.stylist-contact-container .wp-block-group__inner-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; }
+  .stylist-contact-container .wp-block-group__inner-container .numbers-container {
+    margin: 0px; }
+
+@media screen and (min-width: 1000px) {
+  #post-19 p {
+    width: 90%; } }
