@@ -522,17 +522,6 @@ figure {
             grid-row: 2;
         }
     }
-
-    .main-contact {
-
-    }
-
-    // .main-a-u-link {
-    //     @include desktop {
-    //         padding: 10vw;
-    //         background-color: blue;
-    //     }
-    // }
 }
 
 .instagram-container {
@@ -1091,4 +1080,13 @@ footer {
     @include desktop {
         width: 90%;
     }
+}
+
+//404
+.fof-main {
+    min-height: 100vh;
+    padding: 0px 5vw;
+}
+.fof-summary {
+    text-align: center;
 }

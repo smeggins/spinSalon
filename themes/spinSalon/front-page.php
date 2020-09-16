@@ -18,7 +18,7 @@
 						<div class="hero-image">
 							<?php echo the_post_thumbnail(); ?> 				
 						</div>
-						<div id = "h1" class="front-page-intro hidden">
+						<div id = "h1" class="front-page-intro">
 							<?php the_content() ?>
 						</div>
 
@@ -27,7 +27,7 @@
 			<?php endif; ?>
 
 				<div class= "business-info-container">
-					<div id = "h2" class= "js-container hidden">
+					<div id = "h2" class= "js-container">
 						<div class= "contact-us-container">
 							<h2>Contact us</h2>
 							<?php
@@ -48,7 +48,7 @@
 					</div>
 				</div>
 
-				<div id = "h3" class= "location-container hidden">
+				<div id = "h3" class= "location-container">
 					<h2>Where to find us</h2>
 
 					<p>20475 Lougheed Hwy, Maple Ridge, BC V2X 9B6</p>
