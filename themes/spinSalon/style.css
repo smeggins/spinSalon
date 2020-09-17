@@ -1,9 +1,9 @@
 /*!
-Theme Name: Quotes on Dev Starter Theme
-Theme URI: http://underscores.me/
-Author: RED Academy
-Author URI: http://www.redacademy.com
-Description: A WordPress starter theme for the Quotes on Dev project, forked from Underscores.
+Theme Name: Spin Salon Theme
+Theme URI: 
+Author: Phillip Chadwick
+Author URI: 
+Description: A Custom Theme made for Spin Salon by Phillip Chadwick
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,12 +11,6 @@ Tags:
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
-
-Quotes on Dev Theme is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -223,40 +217,40 @@ th {
 --------------------------------------------------------------*/
 @font-face {
   font-family: 'Quicksand';
-  src: url("Quicksand-Light.eot");
-  src: url("Quicksand-Light.eot?#iefix") format("embedded-opentype"), url("Quicksand-Light.woff2") format("woff2"), url("Quicksand-Light.woff") format("woff"), url("Quicksand-Light.ttf") format("truetype");
+  src: url("../../assets/fonts/Quicksand-Light.eot");
+  src: url("../../assets/fonts/Quicksand-Light.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Quicksand-Light.woff2") format("woff2"), url("../../assets/fonts/Quicksand-Light.woff") format("woff"), url("../../assets/fonts/Quicksand-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap; }
 
 @font-face {
   font-family: 'Quicksand';
-  src: url("Quicksand-Bold.eot");
-  src: url("Quicksand-Bold.eot?#iefix") format("embedded-opentype"), url("Quicksand-Bold.woff2") format("woff2"), url("Quicksand-Bold.woff") format("woff"), url("Quicksand-Bold.ttf") format("truetype");
+  src: url("../../assets/fonts/Quicksand-Bold.eot");
+  src: url("../../assets/fonts/Quicksand-Bold.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Quicksand-Bold.woff2") format("woff2"), url("../../assets/fonts/Quicksand-Bold.woff") format("woff"), url("../../assets/fonts/Quicksand-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
   font-display: swap; }
 
 @font-face {
   font-family: 'Quicksand';
-  src: url("Quicksand-Medium.eot");
-  src: url("Quicksand-Medium.eot?#iefix") format("embedded-opentype"), url("Quicksand-Medium.woff2") format("woff2"), url("Quicksand-Medium.woff") format("woff"), url("Quicksand-Medium.ttf") format("truetype");
+  src: url("../../assets/fonts/Quicksand-Medium.eot");
+  src: url("../../assets/fonts/Quicksand-Medium.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Quicksand-Medium.woff2") format("woff2"), url("../../assets/fonts/Quicksand-Medium.woff") format("woff"), url("../../assets/fonts/Quicksand-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap; }
 
 @font-face {
   font-family: 'Quicksand';
-  src: url("Quicksand-SemiBold.eot");
-  src: url("Quicksand-SemiBold.eot?#iefix") format("embedded-opentype"), url("Quicksand-SemiBold.woff2") format("woff2"), url("Quicksand-SemiBold.woff") format("woff"), url("Quicksand-SemiBold.ttf") format("truetype");
+  src: url("../../assets/fonts/Quicksand-SemiBold.eot");
+  src: url("../../assets/fonts/Quicksand-SemiBold.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Quicksand-SemiBold.woff2") format("woff2"), url("../../assets/fonts/Quicksand-SemiBold.woff") format("woff"), url("../../assets/fonts/Quicksand-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap; }
 
 @font-face {
   font-family: 'Quicksand';
-  src: url("Quicksand-Regular.eot");
-  src: url("Quicksand-Regular.eot?#iefix") format("embedded-opentype"), url("Quicksand-Regular.woff2") format("woff2"), url("Quicksand-Regular.woff") format("woff"), url("Quicksand-Regular.ttf") format("truetype");
+  src: url("../../assets/fonts/Quicksand-Regular.eot");
+  src: url("../../assets/fonts/Quicksand-Regular.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Quicksand-Regular.woff2") format("woff2"), url("../../assets/fonts/Quicksand-Regular.woff") format("woff"), url("../../assets/fonts/Quicksand-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap; }
@@ -646,10 +640,10 @@ ul {
     ul li a {
       text-decoration: none;
       color: #2c2a2a;
-      font-family: quicksand, serif; }
+      font-family: Quicksand, serif; }
 
 h2, h3, h4 {
-  font-family: quicksand, serif; }
+  font-family: Quicksand, serif; }
 
 h4 {
   margin: .5rem; }
@@ -678,7 +672,7 @@ figure {
   margin: 1rem; }
   .wp-block-button a {
     border-radius: 0px;
-    font-family: quicksand, serif; }
+    font-family: Quicksand, serif; }
 
 .hidden {
   opacity: 0; }
@@ -734,7 +728,7 @@ figure {
     letter-spacing: 4px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     color: #2c2a2a;
-    font-family: quicksand, serif;
+    font-family: Quicksand, serif;
     font-size: 2.8rem;
     text-align: center;
     opacity: 0;
@@ -827,7 +821,7 @@ figure {
         font-size: 1.25rem;
         letter-spacing: 4px;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        font-family: quicksand, serif; }
+        font-family: Quicksand, serif; }
         .nav-container-border nav ul li :hover {
           font-size: 1.35rem;
           -webkit-transition: font-size .5s;
@@ -1057,7 +1051,7 @@ figure {
     text-shadow: 2px 2px 2px #CECECE;
     top: 11vw;
     margin: 0px;
-    font-family: quicksand; }
+    font-family: Quicksand; }
   @media screen and (min-width: 1000px) {
     .desktop-main-links img {
       -webkit-transition: -webkit-transform 1s;
@@ -1408,7 +1402,7 @@ footer {
     width: 60%;
     font-size: 5vw;
     color: #fff;
-    font-family: quicksand, sans-serif; }
+    font-family: Quicksand, sans-serif; }
     @media screen and (min-width: 1000px) {
       .bio .bio-button {
         font-size: 1vw; } }
